@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>BasketZone | Home</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+        }
+
+        header {
+            background: linear-gradient(135deg, #b30000, #000);
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 45px;
+            letter-spacing: 3px;
+        }
+
+        header p {
+            margin: 8px 0;
+            font-size: 18px;
+            color: #ffcccc;
+        }
+
+        #waktu {
+            margin-top: 12px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav {
+            background: #000;
+            padding: 14px;
+            text-align: center;
+            border-bottom: 3px solid #b30000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: bold;
+            font-size: 15px;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #ff3333;
+        }
+
+        .banner {
+            height: 320px;
+            background: url('images/banner.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 4px solid #b30000;
+        }
+
+        .container {
+            padding: 50px;
+            background: #1a1a1a;
+        }
+
+        .welcome {
+            background: #fff;
+            color: #000;
+            padding: 35px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        .welcome h2 {
+            color: #b30000;
+        }
+
+        .fitur {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .fitur-card {
+            background: #222;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            border-top: 4px solid #b30000;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .fitur-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(255,0,0,0.4);
+        }
+
+        .fitur-card h3 {
+            color: #ff3333;
+        }
+
+        .fitur-card p {
+            color: #ddd;
+        }
+
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            border-top: 3px solid #b30000;
+            color: #aaa;
+        }
+    </style>
+
+    <script>
+        function tampilkanWaktu() {
+            const now = new Date();
+
+            const hari = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+            const bulan = ["Januari","Februari","Maret","April","Mei","Juni",
+                           "Juli","Agustus","September","Oktober","November","Desember"];
+
+            document.getElementById("waktu").innerHTML =
+                hari[now.getDay()] + ", " +
+                now.getDate() + " " +
+                bulan[now.getMonth()] + " " +
+                now.getFullYear() + " | " +
+                now.getHours().toString().padStart(2,'0') + ":" +
+                now.getMinutes().toString().padStart(2,'0') + ":" +
+                now.getSeconds().toString().padStart(2,'0');
+        }
+
+        setInterval(tampilkanWaktu, 1000);
+    </script>
+</head>
+
+<body onload="tampilkanWaktu()">
+
+<header>
+    <h1>BasketZone</h1>
+    <p>Website E-Commerce Perlengkapan Basket</p>
+    <div id="waktu"></div>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="produk.html">Produk</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+
+    <div class="welcome">
+        <h2>Selamat Datang di BasketZone</h2>
+        <p>
+            BasketZone adalah website e-commerce yang menyediakan berbagai
+            perlengkapan olahraga basket seperti sepatu basket, bola basket,
+            jersey, ring basket, dan aksesoris pendukung lainnya dengan kualitas terbaik.
+        </p>
+    </div>
+
+    <div class="fitur">
+        <div class="fitur-card">
+            <h3>Produk Berkualitas</h3>
+            <p>Produk original dengan standar nasional dan internasional.</p>
+        </div>
+
+        <div class="fitur-card">
+            <h3>Harga Terjangkau</h3>
+            <p>Harga bersaing dan ramah untuk semua kalangan.</p>
+        </div>
+
+        <div class="fitur-card">
+            <h3>Desain Modern</h3>
+            <p>Tampilan website modern, nyaman, dan mudah digunakan.</p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2025 Aurellia Putri Kurniawan | 251011700039 | 01SIFP001
+</footer>
+
+</body>
+</html>

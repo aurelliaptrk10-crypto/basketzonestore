@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>BasketZone | Produk</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(135deg, #b30000, #000);
+            color: white;
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 40px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin: 8px 0;
+            font-size: 16px;
+        }
+
+        #waktu {
+            margin-top: 12px;
+            font-weight: bold;
+            color: white;
+        }
+
+        nav {
+            background-color: black;
+            padding: 14px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 22px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: red;
+            border-bottom: 2px solid red;
+            padding-bottom: 5px;
+        }
+
+        .container {
+            padding: 45px;
+        }
+
+        .judul {
+            text-align: center;
+            color: #b30000;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .produk-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .produk-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+            padding: 22px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .produk-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+        }
+
+        .produk-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: contain;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .produk-card h3 {
+            color: #b30000;
+            margin: 15px 0 10px;
+        }
+
+        .produk-card p {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .harga {
+            font-size: 18px;
+            font-weight: bold;
+            color: black;
+            margin: 12px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #b30000;
+            color: white;
+            padding: 11px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: black;
+            color: #ffd700;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 22px;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+    </style>
+
+    <!-- ===== JAVASCRIPT WAKTU ===== -->
+    <script>
+        function tampilkanWaktu() {
+            const hari = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+            const bulan = ["Januari","Februari","Maret","April","Mei","Juni",
+                           "Juli","Agustus","September","Oktober","November","Desember"];
+
+            let now = new Date();
+
+            let teksWaktu =
+                hari[now.getDay()] + ", " +
+                now.getDate() + " " +
+                bulan[now.getMonth()] + " " +
+                now.getFullYear() + " | " +
+                now.getHours().toString().padStart(2,'0') + ":" +
+                now.getMinutes().toString().padStart(2,'0') + ":" +
+                now.getSeconds().toString().padStart(2,'0');
+
+            document.getElementById("waktu").innerHTML = teksWaktu;
+        }
+
+        setInterval(tampilkanWaktu, 1000);
+    </script>
+</head>
+
+<body onload="tampilkanWaktu()">
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>BasketZone</h1>
+        <p>Perlengkapan Basket Berkualitas & Terpercaya</p>
+        <div id="waktu"></div>
+    </header>
+
+    <!-- ===== NAVIGASI ===== -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="produk.html">Produk</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- ===== CONTENT ===== -->
+    <div class="container">
+        <h2 class="judul">Daftar Produk Basket</h2>
+
+        <div class="produk-grid">
+
+            <div class="produk-card">
+                <img src="images/sepatu.jpg" alt="Sepatu Basket">
+                <h3>Sepatu Basket</h3>
+                <p>Dirancang untuk kenyamanan, stabilitas, dan performa maksimal.</p>
+                <p class="harga">Rp 750.000</p>
+                <a href="gallery.html#sepatu-basket" class="btn">Lihat Detail</a>
+            </div>
+
+            <div class="produk-card">
+                <img src="images/bola.jpg" alt="Bola Basket">
+                <h3>Bola Basket</h3>
+                <p>Bola basket standar kompetisi nasional dan internasional.</p>
+                <p class="harga">Rp 250.000</p>
+                <a href="gallery.html#bola-basket" class="btn">Lihat Detail</a>
+            </div>
+
+            <div class="produk-card">
+                <img src="images/jersey1.jpg" alt="Jersey Basket">
+                <h3>Jersey Basket</h3>
+                <p>Bahan ringan, adem, dan menyerap keringat.</p>
+                <p class="harga">Rp 180.000</p>
+                <a href="gallery.html#jersey-basket" class="btn">Lihat Detail</a>
+            </div>
+
+            <div class="produk-card">
+                <img src="images/ring.jpg" alt="Ring Basket">
+                <h3>Ring Basket</h3>
+                <p>Ring basket kokoh dan tahan lama untuk latihan.</p>
+                <p class="harga">Rp 1.200.000</p>
+                <a href="gallery.html#ring-basket" class="btn">Lihat Detail</a>
+            </div>
+
+            <div class="produk-card">
+               <img src="images/kaos kaki.jpg" alt="Kaos Kaki Basket">
+               <h3>Kaos Kaki Basket</h3>
+               <p>Kaos kaki basket tebal, nyaman, dan menyerap keringat.</p>
+               <p class="harga">Rp 75.000</p>
+               <a href="gallery.html#kaos-kaki" class="btn">Lihat Detail</a>
+            </div>
+
+            <div class="produk-card">
+               <img src="images/tas basket.jpg" alt="Tas Basket">
+               <h3>Tas Basket</h3>
+               <p>Tas olahraga basket dengan kapasitas besar dan desain sporty.</p>
+               <p class="harga">Rp 320.000</p>
+               <a href="gallery.html#tas-basket" class="btn">Lihat Detail</a>
+            </div>
+
+            <div class="produk-card">
+               <img src="images/kneeped.jpg" alt="Pelindung Lutut Basket">
+               <h3>Knee Pad</h3>
+               <p>Pelindung lutut untuk mencegah cedera saat bermain basket.</p>
+               <p class="harga">Rp 150.000</p>
+               <a href="gallery.html#pelindung-lutut" class="btn">Lihat Detail</a>
+            </div>
+
+            <div class="produk-card">
+               <img src="images/headband.jpg" alt="Headband Basket">
+               <h3>Headband</h3>
+               <p>Headband elastis untuk menyerap keringat dan tampil stylish.</p>
+               <p class="harga">Rp 60.000</p>
+               <a href="gallery.html#headband" class="btn">Lihat Detail</a>
+            </div>
+
+            <div class="produk-card">
+               <img src="images/wristbands.jpg" alt="Wristband Basket">
+               <h3>Wristband</h3>
+               <p>Wristband basket nyaman untuk menjaga grip tangan.</p>
+               <p class="harga">Rp 55.000</p>
+               <a href="gallery.html#wristband" class="btn">Lihat Detail</a>
+           </div>
+
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        © 2025 Aurellia Putri Kurniawan | 251011700039 | 01SIFP001
+    </footer>
+
+</body>
+</html>

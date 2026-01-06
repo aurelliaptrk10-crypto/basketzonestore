@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>BasketZone | Gallery</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(135deg, #b30000, #000);
+            color: white;
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 40px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin: 8px 0;
+            font-size: 16px;
+        }
+
+        #waktu {
+            margin-top: 12px;
+            font-weight: bold;
+            color: white;
+        }
+
+        nav {
+            background-color: black;
+            padding: 14px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 22px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: red;
+            border-bottom: 2px solid red;
+            padding-bottom: 5px;
+        }
+
+        .container {
+            padding: 45px;
+        }
+
+        .judul {
+            text-align: center;
+            color: #b30000;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-card {
+            background-color: white;
+            border-radius: 14px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+            padding: 22px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 22px rgba(0,0,0,0.35);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: contain;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-card h3 {
+            color: #b30000;
+            margin: 18px 0 10px;
+        }
+
+        .gallery-card p {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 22px;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+    </style>
+
+    <!-- ===== JAVASCRIPT WAKTU ===== -->
+    <script>
+        function tampilkanWaktu() {
+            const hari = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+            const bulan = ["Januari","Februari","Maret","April","Mei","Juni",
+                           "Juli","Agustus","September","Oktober","November","Desember"];
+
+            let now = new Date();
+
+            let teksWaktu =
+                hari[now.getDay()] + ", " +
+                now.getDate() + " " +
+                bulan[now.getMonth()] + " " +
+                now.getFullYear() + " | " +
+                now.getHours().toString().padStart(2,'0') + ":" +
+                now.getMinutes().toString().padStart(2,'0') + ":" +
+                now.getSeconds().toString().padStart(2,'0');
+
+            document.getElementById("waktu").innerHTML = teksWaktu;
+        }
+
+        setInterval(tampilkanWaktu, 1000);
+    </script>
+</head>
+
+<body onload="tampilkanWaktu()">
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>Gallery BasketZone</h1>
+        <p>Koleksi Produk & Perlengkapan Basket</p>
+        <div id="waktu"></div>
+    </header>
+
+    <!-- ===== NAVIGASI ===== -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="produk.html">Produk</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- ===== CONTENT ===== -->
+    <div class="container">
+        <h2 class="judul">Gallery Produk Basket</h2>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-card" id="sepatu-basket">
+                <img src="images/sepatu.jpg" alt="Sepatu Basket">
+                <h3>Sepatu Basket</h3>
+                <p>
+                    Sepatu basket premium dengan grip kuat, desain sporty,
+                    dan kenyamanan maksimal untuk performa terbaik.
+                </p>
+            </div>
+
+            <div class="gallery-card" id="bola-basket">
+                <img src="images/bola.jpg" alt="Bola Basket">
+                <h3>Bola Basket</h3>
+                <p>
+                    Bola basket standar kompetisi nasional dengan daya pantul
+                    stabil dan bahan berkualitas tinggi.
+                </p>
+            </div>
+
+            <div class="gallery-card" id="jersey-basket">
+                <img src="images/jersey1.jpg" alt="Jersey Basket">
+                <h3>Jersey Basket</h3>
+                <p>
+                    Jersey basket berbahan ringan, adem, dan menyerap keringat,
+                    cocok untuk latihan dan pertandingan.
+                </p>
+            </div>
+
+            <div class="gallery-card" id="ring-basket">
+                <img src="images/ring.jpg" alt="Ring Basket">
+                <h3>Ring Basket</h3>
+                <p>
+                    Ring basket kokoh dengan material baja berkualitas,
+                    ideal untuk penggunaan indoor maupun outdoor.
+                </p>
+            </div>
+
+            <div class="gallery-card" id="kaos-kaki">
+                <img src="images/kaos kaki.jpg" alt="Kaos Kaki Basket">
+                <h3>Kaos Kaki Basket</h3>
+                <p>
+                    Kaos kaki basket dengan bahan tebal dan elastis,
+                    membantu menyerap keringat dan menjaga kenyamanan kaki.
+                </p>
+            </div>
+
+            <div class="gallery-card" id="tas-basket">
+                <img src="images/tas basket.jpg" alt="Tas Basket">
+                <h3>Tas Basket</h3>
+                <p>
+                    Tas basket berkapasitas besar, cocok untuk membawa sepatu,
+                    jersey, bola, dan perlengkapan latihan lainnya.
+                </p>
+            </div>
+
+            <div class="gallery-card" id="pelindung-lutut">
+                <img src="images/kneeped.jpg" alt="Pelindung Lutut Basket">
+                <h3>Knee Pad</h3>
+                <p>
+                    Pelindung lutut basket untuk mengurangi risiko cedera
+                    saat melompat, berlari, dan bertanding.
+                </p>
+            </div>
+
+            <div class="gallery-card" id="headband">
+                <img src="images/headband.jpg" alt="Headband Basket">
+                <h3>Headband</h3>
+                <p>
+                    Headband basket elastis yang menyerap keringat
+                    sekaligus menambah gaya saat bermain.
+                </p>
+            </div>
+
+            <div class="gallery-card" id="wristband">
+                <img src="images/wristbands.jpg" alt="Wristband Basket">
+                <h3>Wristband</h3>
+                <p>
+                    Wristband basket untuk menjaga tangan tetap kering
+                    dan meningkatkan grip saat bermain.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        © 2025 Aurellia Putri Kurniawan | 251011700039 | 01SIFP001
+    </footer>
+
+</body>
+</html>

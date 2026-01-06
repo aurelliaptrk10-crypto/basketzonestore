@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>BasketZone | Contact</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(135deg, #b30000, #000);
+            color: white;
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 40px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin: 8px 0;
+            font-size: 16px;
+        }
+
+        #waktu {
+            margin-top: 12px;
+            font-weight: bold;
+            color: white;
+        }
+
+        nav {
+            background-color: black;
+            padding: 14px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 22px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: red;
+            border-bottom: 2px solid red;
+            padding-bottom: 5px;
+        }
+
+        .container {
+            padding: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+        }
+
+        .card h2 {
+            color: #b30000;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .contact-info strong {
+            color: black;
+        }
+
+        /* ===== FORM ===== */
+        label {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 18px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: #b30000;
+            outline: none;
+            box-shadow: 0 0 5px rgba(179,0,0,0.5);
+        }
+
+        textarea {
+            resize: none;
+            height: 120px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #b30000, #000);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: black;
+            color: #ffd700;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 22px;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 30px;
+            }
+        }
+    </style>
+
+    <!-- ===== JAVASCRIPT WAKTU ===== -->
+    <script>
+        function tampilkanWaktu() {
+            const hari = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+            const bulan = ["Januari","Februari","Maret","April","Mei","Juni",
+                           "Juli","Agustus","September","Oktober","November","Desember"];
+
+            let now = new Date();
+
+            let teksWaktu =
+                hari[now.getDay()] + ", " +
+                now.getDate() + " " +
+                bulan[now.getMonth()] + " " +
+                now.getFullYear() + " | " +
+                now.getHours().toString().padStart(2,'0') + ":" +
+                now.getMinutes().toString().padStart(2,'0') + ":" +
+                now.getSeconds().toString().padStart(2,'0');
+
+            document.getElementById("waktu").innerHTML = teksWaktu;
+        }
+
+        setInterval(tampilkanWaktu, 1000);
+    </script>
+</head>
+
+<body onload="tampilkanWaktu()">
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>Hubungi BasketZone</h1>
+        <p>Kami Siap Membantu Kebutuhan Basket Anda</p>
+        <div id="waktu"></div>
+    </header>
+
+    <!-- ===== NAVIGASI ===== -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="produk.html">Produk</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- ===== CONTENT ===== -->
+    <div class="container">
+
+        <!-- INFO KONTAK -->
+        <div class="card contact-info">
+            <h2>Informasi Kontak</h2>
+            <p><strong>Nama Toko :</strong> BasketZone</p>
+            <p><strong>Email :</strong> basketzone@email.com</p>
+            <p><strong>No. Telepon :</strong> 0812-3456-7891</p>
+            <p><strong>Alamat :</strong> Jakarta, Indonesia</p>
+            <p>
+                Silakan hubungi kami untuk pertanyaan produk,
+                kerja sama, atau pemesanan perlengkapan basket.
+            </p>
+        </div>
+
+        <!-- FORM -->
+        <div class="card">
+            <h2>Formulir Kontak</h2>
+            <form>
+                <label>Nama Lengkap</label>
+                <input type="text" placeholder="Masukkan nama Anda" required>
+
+                <label>Email</label>
+                <input type="email" placeholder="Masukkan email Anda" required>
+
+                <label>Pilih Produk</label>
+                <select>
+                    <option>Sepatu Basket</option>
+                    <option>Bola Basket</option>
+                    <option>Jersey Basket</option>
+                    <option>Ring Basket</option>
+                    <option>Kaos Kaki</option>
+                    <option>Tas</option>
+                    <option>Knee Pad</option>
+                    <option>Headband</option>
+                    <option>Wristband</option>
+                </select>
+
+                <label>Pesan</label>
+                <textarea placeholder="Tulis pesan Anda di sini"></textarea>
+
+                <button type="submit" class="btn">Kirim Pesan</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        © 2025 Aurellia Putri Kurniawan | 251011700039 | 01SIFP001
+    </footer>
+
+</body>
+</html>
